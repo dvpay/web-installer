@@ -25,7 +25,7 @@ class Api
     const MAX_PHP_VERSION = '8.999.999';
 
     const BACKEND_URL_IN_FRONTEND = 'http://localhost:8080';
-    const MERCHANT_ARCHIVE = 'https://github.com/stickpro/dv-backend/archive/refs/tags/dv-pay-1.0.0.zip';
+    const MERCHANT_ARCHIVE = 'https://github.com/dvpay/dv-backend/archive/refs/tags/1.0.1.zip';
 
     const ARCHIVE_SUBFOLDER = 'dv-backend-dv-pay-1.0.0/';
 
