@@ -25,9 +25,9 @@ class Api
     const MAX_PHP_VERSION = '8.999.999';
 
     const BACKEND_URL_IN_FRONTEND = 'http://localhost:8080';
-    const MERCHANT_ARCHIVE = 'https://github.com/dvpay/dv-backend/archive/refs/tags/1.0.1.zip';
+    const MERCHANT_ARCHIVE = 'https://github.com/dvpay/dv-backend/archive/refs/tags/1.0.2.zip';
 
-    const ARCHIVE_SUBFOLDER = 'dv-backend-dv-pay-1.0.0/';
+    const ARCHIVE_SUBFOLDER = 'dv-backend-1.0.2/';
 
     protected $log;
 
@@ -508,6 +508,7 @@ class Api
         try {
 
             $url = str_replace(array("http://", "https://"), "", $this->data['site']['url']);
+            $databaseName = $this->data['site']['database']['name'] ?? 'merchant';
             $envFileData =
                 /*App*/
                 'APP_NAME=\'' . 'DV PAY' . "'\n" .
@@ -520,7 +521,7 @@ class Api
                 'DB_CONNECTION=' . $this->data['site']['database']['type'] . "\n" .
                 'DB_HOST=' . $this->data['site']['database']['host'] . "\n" .
                 'DB_PORT=' . $this->data['site']['database']['port'] . "\n" .
-                'DB_DATABASE=' . $this->data['site']['database']['name'] . "\n" .
+                'DB_DATABASE=' . $databaseName . "\n" .
                 'DB_USERNAME=' . $this->data['site']['database']['user'] . "\n" .
                 'DB_PASSWORD=' . $this->data['site']['database']['pass'] . "\n\n" .
 
